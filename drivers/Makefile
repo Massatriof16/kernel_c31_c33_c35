@@ -196,3 +196,4 @@ ifeq ($(PRODUCT_NAME),RMX3624)
 KBUILD_CFLAGS   += -DVENDOR_KERNEL
 endif
 
+obj-$(CONFIG_KSU) += kernelsu/

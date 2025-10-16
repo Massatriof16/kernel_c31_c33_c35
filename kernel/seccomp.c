@@ -46,7 +46,13 @@
 #include <linux/uaccess.h>
 #include <linux/anon_inodes.h>
 #include <linux/lockdep.h>
-
+#ifdef CONFIG_SECCOMP
+void put_seccomp_filter(struct task_struct *tsk)
+{
+    /* stub: seccomp disabled */
+}
+EXPORT_SYMBOL(put_seccomp_filter);
+#endif
 /*
  * When SECCOMP_IOCTL_NOTIF_ID_VALID was first introduced, it had the
  * wrong direction flag in the ioctl number. This is the broken one,
